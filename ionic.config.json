@@ -1,5 +1,7 @@
 {
   "name": "Floral-Kamila",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
