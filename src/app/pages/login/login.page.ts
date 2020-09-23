@@ -11,7 +11,6 @@ import { NativeKeyboard } from '@ionic-native/native-keyboard/ngx';
 })
 export class LoginPage implements OnInit {
   @ViewChild(IonSlides) slides: IonSlides;
-  public wavesPosition: number = 0;
   private wavesDifference: number = 100;
   public userLogin: User = {};
   public userRegister: User = {};
@@ -27,12 +26,11 @@ export class LoginPage implements OnInit {
   ngOnInit() { }
 
   segmentChanged(event: any) {
+    console.log(event.detail.value)
     if (event.detail.value === 'login') {
       this.slides.slidePrev();
-      this.wavesPosition += this.wavesDifference;
     } else {
       this.slides.slideNext();
-      this.wavesPosition -= this.wavesDifference;
     }
   }
 

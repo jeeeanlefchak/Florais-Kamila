@@ -24,3 +24,25 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+
+.center-items{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.w-100{
+  width: 100% !important;
+}
+.d-flex{
+  display: flex !important;
+}
+
+.card-default-items{
+  border-radius: 10%;
+  background-color: #dbeefd;
+  margin: 1% 1% 1% 1%;
+  min-height: 100px;
+  padding: 2%;
+}

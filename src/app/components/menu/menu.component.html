@@ -1,0 +1,28 @@
+<ion-menu id="menu" side="start" menuId="HFORMESMENU" contentId="HFORMESMENU">
+  <ion-card class="cardMenu">
+    <div class="imgFundo">
+    </div>
+    <ion-avatar class="avatar" [ngClass]="{'img-avatar' : !avatar }">
+      <img *ngIf="avatar" [src]="avatar">
+      <span *ngIf="!avatar && name"> {{name[0]}}
+      </span>
+    </ion-avatar>
+    <ion-card-content (click)="navigate('account')">
+      <ion-label>
+        <h6><b>{{ name }}</b></h6>
+      </ion-label>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-content>
+    <ion-list>
+      <ion-item (click)="logout()">
+        <div class="item">
+          <ion-icon name="exit-outline" class="padding"></ion-icon>
+          <ion-label>Sair</ion-label>
+        </div>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<ion-router-outlet id="HFORMESMENU"></ion-router-outlet>

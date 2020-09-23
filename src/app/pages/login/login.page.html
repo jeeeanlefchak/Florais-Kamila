@@ -1,7 +1,8 @@
 <ion-content class="swiper-no-swiping">
   <div class="container top" [hidden]="keyboard.isVisible">
-    <img src="/assets/img/logo.png">
-
+    <div class="center-items w-100">
+    <img src="/assets/img/logo.png" >
+  </div>
     <ion-segment (ionChange)="segmentChanged($event)" mode="ios" value="login">
       <ion-segment-button mode="ios" value="login">
         <ion-label>Login</ion-label>
@@ -14,51 +15,46 @@
 
   <ion-slides>
     <ion-slide>
-      <div class="slide-inner ion-padding">
-        <span>Login</span>
+      <ion-card>
+        <div class="slide-inner ion-padding">
+          <ion-card-title>Login</ion-card-title>
 
-        <ion-item class="ion-margin-top" lines="none">
-          <ion-input type="email" placeholder="E-mail" [(ngModel)]="userLogin.email"></ion-input>
-        </ion-item>
+          <ion-item class="ion-margin-top" lines="none">
+            <ion-input type="email" placeholder="E-mail" [(ngModel)]="userLogin.email"></ion-input>
+          </ion-item>
 
-        <ion-item class="ion-margin-top" lines="none">
-          <ion-input type="password" placeholder="Senha" [(ngModel)]="userLogin.password"></ion-input>
-        </ion-item>
+          <ion-item class="ion-margin-top" lines="none">
+            <ion-input type="password" placeholder="Senha" [(ngModel)]="userLogin.password"></ion-input>
+          </ion-item>
 
-        <ion-button class="ion-margin-top" (click)="login()" color="light" expand="block">
-          Entrar
-        </ion-button>
-      </div>
+          <ion-button class="ion-margin-top" (click)="login()" color="medium" expand="block">
+            Entrar
+          </ion-button>
+        </div>
+      </ion-card>
     </ion-slide>
 
     <ion-slide>
-      <div class="slide-inner ion-padding">
-        <span>Cadastro</span>
+      <ion-card>
+        <div class="slide-inner ion-padding">
+          <ion-card-title>Cadastro</ion-card-title>
+          <ion-item class="ion-margin-top" lines="none">
+            <ion-input type="text" placeholder="Nome"></ion-input>
+          </ion-item>
 
-        <ion-item class="ion-margin-top" lines="none">
-          <ion-input type="text" placeholder="Nome"></ion-input>
-        </ion-item>
+          <ion-item class="ion-margin-top" lines="none">
+            <ion-input type="email" placeholder="E-mail" [(ngModel)]="userRegister.email"></ion-input>
+          </ion-item>
 
-        <ion-item class="ion-margin-top" lines="none">
-          <ion-input type="email" placeholder="E-mail" [(ngModel)]="userRegister.email"></ion-input>
-        </ion-item>
+          <ion-item class="ion-margin-top" lines="none">
+            <ion-input type="password" placeholder="Senha" [(ngModel)]="userRegister.password"></ion-input>
+          </ion-item>
 
-        <ion-item class="ion-margin-top" lines="none">
-          <ion-input type="password" placeholder="Senha" [(ngModel)]="userRegister.password"></ion-input>
-        </ion-item>
-
-        <ion-button class="ion-margin-top" (click)="register()" color="light" expand="block">
-          Cadastrar
-        </ion-button>
-      </div>
+          <ion-button class="ion-margin-top" (click)="register()" color="medium" expand="block">
+            Cadastrar
+          </ion-button>
+        </div>
+      </ion-card>
     </ion-slide>
   </ion-slides>
-
-  <div class="ocean">
-    <div class="waves" [ngStyle]="{'background-position-x': wavesPosition + 'px'}"></div>
-
-    <div class="container bottom ion-text-center" [hidden]="keyboard.isVisible">
-      <span>O aplicativo que foi feito para o gerenciamento dos produtos da sua loja de surf!</span>
-    </div>
-  </div>
 </ion-content>
