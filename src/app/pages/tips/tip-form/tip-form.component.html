@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Tip</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="form" autocomplete="off">
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Nome</ion-label>
+        <ion-input type="text" formControlName="name" maxlength="100">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Descrição</ion-label>
+        <ion-textarea type="text" formControlName="description" maxlength="1000" rows="7">
+        </ion-textarea>
+      </ion-item>
+    </ion-list>
+  </form>
+
+</ion-content>
+
+<ion-footer>
+  <ion-buttons>
+    <ion-button color="danger" (click)="onCancel()" slot="start">
+      <ion-label>Cancelar</ion-label>
+    </ion-button>
+    <div class="w-100"></div>
+    <ion-button color="primary" (click)="onSubmit()" slot="end">
+      <ion-label>Salvar</ion-label>
+    </ion-button>
+  </ion-buttons>
+</ion-footer>

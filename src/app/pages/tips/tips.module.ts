@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { TipsPageRoutingModule } from './tips-routing.module';
 
 import { TipsPage } from './tips.page';
+import { TipService } from 'src/app/services/tip.service';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { TipsPage } from './tips.page';
     IonicModule,
     TipsPageRoutingModule
   ],
-  declarations: [TipsPage]
+  declarations: [TipsPage],
+  providers:[TipService]
 })
 export class TipsPageModule {}
