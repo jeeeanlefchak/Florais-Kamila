@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { AngularFireModule } from '@angular/fire';
-import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreModule } from '@angular/fire/firestore';
-import { Tip } from '../models/tip.model';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { map } from 'rxjs/operators';
+import { Tip } from '../models/tip.model';
 @Injectable()
 export class TipService {
   private tipCollection: AngularFirestoreCollection<Tip>;
@@ -14,7 +13,7 @@ export class TipService {
 
   get() {
     return this.tipCollection.snapshotChanges().pipe(
-      map(actions => {
+      map((actions: any[]) => {
         return actions.map(a => {
           const data = a.payload.doc.data();
           const id = a.payload.doc.id;
