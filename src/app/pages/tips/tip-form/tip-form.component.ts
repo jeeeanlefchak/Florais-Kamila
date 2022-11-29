@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { LoadingController, ModalController, ToastController } from '@ionic/angular';
 import { Tip } from 'src/app/models/tip.model';
 import { TipService } from 'src/app/services/tip.service';
@@ -11,10 +11,10 @@ import { TipService } from 'src/app/services/tip.service';
 })
 export class TipFormComponent implements OnInit {
   @Input() data: Tip = new Tip();
-  form: FormGroup;
+  form: UntypedFormGroup;
 
   private loading: any;
-  constructor(private formBuilder: FormBuilder, private modalCtrl: ModalController, private loadingCtrl: LoadingController,
+  constructor(private formBuilder: UntypedFormBuilder, private modalCtrl: ModalController, private loadingCtrl: LoadingController,
     private toastCtrl: ToastController, private tipService: TipService) {
     this.form = this.formBuilder.group({
       id: [0],
